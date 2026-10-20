@@ -34,7 +34,7 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-scene" aria-label="마우스와 터치에 반응하는 3D 폴더 배경">
+      <div class="hero-scene" role="group" aria-label="마우스와 터치에 반응하는 3D 폴더 배경">
         <div class="scene-light scene-light-one" aria-hidden="true"></div>
         <div class="scene-light scene-light-two" aria-hidden="true"></div>
         <span class="scene-float scene-float-orb float-orb-one" aria-hidden="true"></span>
@@ -73,7 +73,7 @@
       <div class="section-heading">
         <div><p class="section-kicker">01 / TOOLBOX</p><h2 id="toolbox-title">사용 가능한 툴과 언어<span>↗</span></h2></div>
       </div>
-      <div class="works-stack" aria-label="사용 가능한 도구 네 가지">
+      <div class="works-stack" role="group" aria-label="사용 가능한 도구 네 가지">
         <article class="work-card work-card--lime tool-entry-card" data-tool-card>
           <button class="work-card-hit-area" type="button" data-tool-open data-tool-title="프로그래밍 언어" data-tool-template="tool-detail-programming" aria-expanded="false" aria-controls="tool-inline-details-01" aria-label="프로그래밍 언어 카드 펼치기"><span class="visually-hidden">자세히 보기</span></button>
           <div class="work-card-top"><span class="work-card-number">01</span><span class="work-card-meta">PROGRAMMING<i></i><span>LANGUAGES</span></span><span class="pixel-stamp" aria-hidden="true">JX</span></div>
@@ -147,7 +147,7 @@
           <p class="section-kicker">03 / CURRENT SEMESTER <span class="course-kicker-mark" aria-hidden="true">◆</span></p>
           <h2 id="courses-title">요즘 배우는 것들<span>↗</span></h2>
         </div>
-        <div class="course-term-stamp" aria-label="2026년 2학기">
+        <div class="course-term-stamp" role="group" aria-label="2026년 2학기">
           <span class="course-stamp-label">TERM / INDEX</span>
           <div class="course-stamp-number">26<span>—</span>02</div>
           <p>FIELD NOTES <i></i> ACTIVE LEARNING</p>
@@ -223,7 +223,7 @@
           </li>
         </ul>
       </div>
-      <div class="course-footer-rail" aria-hidden="true">
+      <div class="course-footer-rail" aria-hidden="true"></div>
     </section>
 
     <section class="section-shell section-block class-section" id="class-links" aria-labelledby="class-title">
@@ -231,7 +231,7 @@
         <div><p class="section-kicker">04 / WEEKLY PRACTICE</p><h2 id="class-title">주차별 학습<span>↗</span></h2></div>
         <p class="section-description">카드를 잡아 끌거나 넘기고, 격자 보기로 전체 주차를 한눈에 확인하세요.</p>
       </div>
-      <div class="week-carousel" data-layout="carousel" aria-label="웹프로그래밍 주차별 실습 링크">
+      <div class="week-carousel" data-layout="carousel" role="region" aria-label="웹프로그래밍 주차별 실습 링크">
         <div class="week-carousel-toolbar">
           <p><span class="carousel-live-dot"></span> SWIPE / SCROLL TO EXPLORE <span class="carousel-range">01—15</span></p>
           <div class="week-toolbar-actions">
@@ -246,7 +246,7 @@
           </div>
         </div>
         <!-- 링크 등록: 각 주차 카드의 href="YOUR_WEEK_XX_PRACTICE_URL"만 실제 URL로 바꾸면 파란색/클릭 상태가 자동 적용됩니다. class는 수정할 필요가 없습니다. -->
-        <div class="week-viewport" tabindex="0" aria-label="주차별 카드를 좌우로 스크롤할 수 있습니다">
+        <div class="week-viewport" tabindex="0" role="group" aria-label="주차별 카드를 좌우로 스크롤할 수 있습니다">
           <div class="week-track">
         <a class="week-card is-upcoming" href="YOUR_WEEK_01_PRACTICE_URL" aria-label="1주차 실습으로 이동">
           <span class="week-card-glow" aria-hidden="true"></span>
@@ -453,7 +453,7 @@
 
   <footer class="site-footer section-shell">
     <a class="footer-brand" href="#top">jelix<span>.</span></a>
-    <p class="last-updated">최종 수정일: <time id="last-updated-date" datetime="">불러오는 중...</time></p>
+    <p class="last-updated">최종 수정일: <time id="last-updated-date" datetime="2026-10-20">2026-10-20</time></p>
   </footer>
 </body>
 </html>
