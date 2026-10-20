@@ -1,12 +1,14 @@
 <h3>다양한 입력 폼</h3>
 
-   <form method="get" action="form_app.js">
+   <form method="get" action="https://libnt.smuc.ac.kr/Search/">
 
-      성명: <input type="text" name="person"/> <br>
+      검색어: <input type="text" name="q"/> <br>
 
-      성별: <input type="radio" name="sex" value="male"/>남성
+      이메일: <input type="email" name="email" placeholder="id@gmail.com"/><br>
 
-               <input type="radio" name="sex" value="female"/>여성<br>
+      캠퍼스: <input type="radio" name="campuscode" value="00"/>서울
+
+               <input type="radio" name="campuscode" value="01"/>천안<br>
 
       직업: <select name="job"  size="1">
 
@@ -33,5 +35,6 @@
            <input type="submit" value="신청"/>
 
            <input type="reset" value="취소"/>
+           <input type="button" value="버튼" onClick="alert('입력값 확인')"/>
 
    </form>
