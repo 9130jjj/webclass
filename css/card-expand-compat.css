@@ -1,0 +1,47 @@
+/* V50-style card-content opening only. No rules here affect the closed-card scroll/reveal motion. */
+#main > #toolbox.has-open-tool-card {
+  position: relative !important;
+  z-index: 40 !important;
+  isolation: isolate !important;
+}
+.toolbox-expanded-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, #f0f0ee 0%, #e9e9e7 58%, #efefed 100%);
+}
+
+/* Scope V50's spring timing to the clicked/expanded state only. */
+#toolbox .work-card.is-expanded {
+  transition:
+    height .46s cubic-bezier(.34, 1.42, .58, 1),
+    min-height .46s cubic-bezier(.34, 1.42, .58, 1),
+    transform .46s cubic-bezier(.34, 1.42, .58, 1),
+    opacity .2s ease-out,
+    border-color .22s ease,
+    box-shadow .22s ease !important;
+  transition-delay: 0s !important;
+  transform: translate3d(0, -3px, 0) scale(1.012) !important;
+  transition-timing-function: cubic-bezier(.34, 1.42, .58, 1) !important;
+}
+#toolbox .works-stack.has-expanded-card > .work-card {
+  transition-delay: 0s !important;
+}
+#toolbox .works-stack.has-expanded-card > .work-card:not(.is-expanded) {
+  transition-duration: .42s !important;
+  transition-timing-function: cubic-bezier(.34, 1.42, .58, 1) !important;
+}
+#toolbox .works-stack.has-expanded-card .work-card-main,
+#toolbox .works-stack.has-expanded-card .work-card-role {
+  transition: opacity .22s ease-out, transform .32s cubic-bezier(.34, 1.42, .58, 1) !important;
+  transition-delay: 0s !important;
+}
+#toolbox .works-stack.has-expanded-card .tool-inline-details:not([hidden]) {
+  animation: toolDetailsPop .32s cubic-bezier(.34, 1.42, .58, 1) both !important;
+}
+@keyframes toolDetailsPop {
+  0% { opacity: 0; transform: translate3d(0, 12px, 0) scale(.985); }
+  76% { opacity: 1; transform: translate3d(0, -1px, 0) scale(1.003); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
