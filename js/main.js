@@ -890,3 +890,42 @@ if ('IntersectionObserver' in window && viewEntries.length) {
     });
   });
 })();
+
+
+/* Last modified date for index.html: read the latest GitHub commit affecting this file. */
+(() => {
+  const dateElement = document.getElementById('last-updated-date');
+  if (!dateElement) return;
+
+  fetch('https://api.github.com/repos/9130jjj/webclass/commits?path=index.html&per_page=1')
+    .then((response) => {
+      if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
+      return response.json();
+    })
+    .then((commits) => {
+      const commitDate = commits[0]?.commit?.committer?.date;
+      if (!commitDate) throw new Error('No commit date found');
+
+      const date = new Date(commitDate);
+      const year = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric'
+      }).format(date);
+      const month = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Seoul',
+        month: '2-digit'
+      }).format(date);
+      const day = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Seoul',
+        day: '2-digit'
+      }).format(date);
+      const formattedDate = `${year}-${month}-${day}`;
+
+      dateElement.dateTime = formattedDate;
+      dateElement.textContent = formattedDate;
+    })
+    .catch((error) => {
+      console.error('최종 수정일을 불러오지 못했습니다:', error);
+      dateElement.textContent = '날짜를 불러올 수 없습니다.';
+    });
+})();
